@@ -1,19 +1,11 @@
 Reference,Description,Value,Package,Quantity,Manufacturer,Part Number,Link,Unit Cost (USD),Notes
-U1,NFC Energy Harvesting IC,NT3H2111W0FTT,TSSOP-8,1,NXP,NT3H2111W0FTT,https://www.digikey.com/en/products/detail/nxp-usa-inc/NT3H2111W0FTT/5872878,2.50,Request free samples at nxp.com/samples
-U2,Microcontroller,ATtiny202-SSF,SOIC-8,1,Microchip,ATtiny202-SSF,https://www.digikey.com/en/products/detail/microchip-technology/ATTINY202-SSF/9947534,1.50,
-D1,Green LED 0402,150040GS73240,0402,1,Würth Elektronik,150040GS73240,https://www.digikey.com/en/products/detail/würth-elektronik/150040GS73240/4489915,0.15,Vf=2.1V at 10mA
-D2,Green LED 0402,150040GS73240,0402,1,Würth Elektronik,150040GS73240,https://www.digikey.com/en/products/detail/würth-elektronik/150040GS73240/4489915,0.15,
-D3,Green LED 0402,150040GS73240,0402,1,Würth Elektronik,150040GS73240,https://www.digikey.com/en/products/detail/würth-elektronik/150040GS73240/4489915,0.15,
-C3,Decoupling Cap VOUT,220nF,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/CC0402KRX5R9BB224/5195228,0.10,CRITICAL: place within 1mm of NT3H2111 VOUT pin
-C4,RESET Decoupling Cap,100nF,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/CC0402KRX5R9BB104/5195262,0.10,
-C1,Antenna Tuning Cap,39pF,0402,1,Generic,,https://www.digikey.com/en/products/detail/kemet/C0402C390J5GACTU/411388,0.10,
-C2,Antenna Tuning Cap Optional,10pF,0402,1,Generic,,https://www.digikey.com/en/products/detail/kemet/C0402C100J5GACTU/411376,0.10,DNP - do not place on first build
-R1,FD Pull-up,10kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-0710KL/726418,0.05,
-R2,SCL Pull-up,10kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-0710KL/726418,0.05,
-R3,SDA Pull-up,10kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-0710KL/726418,0.05,
-R4,RESET Pull-up,10kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-0710KL/726418,0.05,
-R5,UPDI Series Resistor,1kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-071KL/726394,0.05,
-R6,LED1 Current Limit,3.3kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-073K3L/726408,0.05,Sets LED current to ~0.3mA
-R7,LED2 Current Limit,3.3kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-073K3L/726408,0.05,
-R8,LED3 Current Limit,3.3kΩ,0402,1,Generic,,https://www.digikey.com/en/products/detail/yageo/RC0402JR-073K3L/726408,0.05,
+U1,NFC Energy Harvesting IC,NT3H2111W0FTT,TSSOP-8,1,NXP,NT3H2111W0FTT,https://www.digikey.ca/en/products/detail/nxp-usa-inc/NT3H2111W0FTTJ/5872979,1.20,
+U2,Microcontroller,ATtiny202-SSF,SOIC-8,1,Microchip,ATtiny202-SSF,https://www.digikey.ca/en/products/detail/microchip-technology/ATTINY202-SSF/9947533,0.50,
+D1-D3,Green LED 0402,150040GS73240,0402,3,Würth Elektronik,150040GS73240,https://www.digikey.ca/en/products/detail/w%C3%BCrth-elektronik/150040GS73240/8557155,0.3
+C3,Decoupling Cap VOUT,220nF,0402,1,Samsung,CL05A224KP5NNNC,https://www.digikey.ca/en/products/detail/samsung-electro-mechanics/CL05A224KP5NNNC/3886707,0.10
+C4,RESET Decoupling Cap,100nF,0402,1,Samsung,CL05B104KO5NNNC,https://www.digikey.ca/en/products/detail/samsung-electro-mechanics/CL05B104KO5NNNC/3886659,0.10,
+C1,Antenna Tuning Cap,39pF,0402,1,Murata,GJM1555C1H390FB01D,https://www.digikey.com/en/products/detail/murata-electronics/GJM1555C1H390FB01D/7362928411388,0.14,
+R1-R4,FD/SCL/SDA/RESET Pull-up,10kΩ,0402,4,Stackpole Electronics Inc,RMCF0402FT10K0,https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0402FT10K0/1761433,0.10,
+R5,UPDI Series Resistor,1kΩ,0402,1,Generic,Stackpole Electronics Inc,RMCF0402FT10K0,https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0402FT1K00/1761754,0.10,
+R6-R8,LED1-LED3 Current Limit,3.3kΩ,0402,3,Stackpole Electronics Inc,RNCF0402BTE10K0,https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RNCF0402BTE10K0/1710765,0.10,
 PCB,Transparent FPC PCB,Glassboard,85.6x54mm,5,JLCPCB,,https://jlcpcb.com,6.40,ENIG finish / 0.2mm / 2 layer / transparent FPC - price per board for qty 5
