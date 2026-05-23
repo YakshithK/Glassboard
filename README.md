@@ -2,8 +2,8 @@
 
 a transparent NFC business card that lights up when you tap your phone to it. no battery. no charging. ever.
 
-![3D render of Glassboard (Front)](images/3d-front.png)
-![3D render of Glassboard (Back)](images/3d-back.png)
+![3D render of Glassboard (Front)](images/3d_front.png)
+![3D render of Glassboard (Back)](images/3d_back.png)
 
 ---
 
