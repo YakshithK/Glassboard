@@ -2750,7 +2750,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "40ff2461-a4a6-434f-8dfe-dd8e69863d4f")
-		(property "Reference" "D_LED1"
+		(property "Reference" "D1"
 			(at 232.7275 85.09 0)
 			(effects
 				(font
@@ -2811,7 +2811,7 @@
 		(instances
 			(project "Glassboard"
 				(path "/1451c52f-1bb9-4a48-ad08-fcf3fedff30a"
-					(reference "D_LED1")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -2827,7 +2827,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "435fcff0-3cf2-4851-a397-04075e26fea8")
-		(property "Reference" "C_RESET1"
+		(property "Reference" "C3"
 			(at 204.47 88.8999 0)
 			(effects
 				(font
@@ -2881,7 +2881,7 @@
 		(instances
 			(project ""
 				(path "/1451c52f-1bb9-4a48-ad08-fcf3fedff30a"
-					(reference "C_RESET1")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -2897,7 +2897,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4883fa3f-6cd8-4fba-bb64-db80c5f76ed3")
-		(property "Reference" "D_LED3"
+		(property "Reference" "D3"
 			(at 249.2375 115.57 0)
 			(effects
 				(font
@@ -2958,7 +2958,7 @@
 		(instances
 			(project ""
 				(path "/1451c52f-1bb9-4a48-ad08-fcf3fedff30a"
-					(reference "D_LED3")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -2974,7 +2974,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49ae49c7-9892-4067-8766-52bd65bcfbc7")
-		(property "Reference" "D_LED2"
+		(property "Reference" "D2"
 			(at 255.5875 101.6 0)
 			(effects
 				(font
@@ -3035,7 +3035,7 @@
 		(instances
 			(project "Glassboard"
 				(path "/1451c52f-1bb9-4a48-ad08-fcf3fedff30a"
-					(reference "D_LED2")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -4201,7 +4201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d330797b-012c-4885-ad38-fe56746d236b")
-		(property "Reference" "C_VOUT1"
+		(property "Reference" "C2"
 			(at 134.62 105.4099 0)
 			(effects
 				(font
@@ -4255,7 +4255,7 @@
 		(instances
 			(project ""
 				(path "/1451c52f-1bb9-4a48-ad08-fcf3fedff30a"
-					(reference "C_VOUT1")
+					(reference "C2")
 					(unit 1)
 				)
 			)
