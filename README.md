@@ -1,101 +1,116 @@
 # Glassboard
 
-a transparent NFC business card that lights up when you tap your phone to it. no battery. no charging. ever.
+A transparent NFC business card that lights up when you tap your phone to it. No battery. No charging. Ever.
 
-![3D render of Glassboard (Front)](images/3d_front.png)
-![3D render of Glassboard (Back)](images/3d_back.png)
-
----
-
-## what it is
-
-Glassboard is a credit card sized transparent PCB that stores my contact info and portfolio link in NFC memory. when someone taps their phone, two things happen at the same time — their phone opens my portfolio, and the card animates three green LEDs.
-
-the whole thing is powered by energy harvested from the phone's own NFC field. the card is completely passive. there's no battery, no charging port, nothing. it just works.
-
-it's made on JLCPCB's transparent FPC substrate so you can see every trace, every component, and the antenna spiral through the card.
+![3D Front](images/3d_front.png)
+![3D Back](images/3d_back.png)
 
 ---
 
-## why i made it
+## What is it
 
-i kept handing people paper business cards at hackathons and programs. felt wrong. i'm a hardware builder — the card should prove it the second someone touches it.
+Glassboard is a credit card sized transparent circuit board. It stores my contact info and portfolio link using NFC. When someone taps their phone to it, two things happen at once: their phone opens my portfolio link, and three green LEDs on the card light up and animate.
 
-so i built one that does.
+The entire card runs off the energy from the phone's own NFC signal. There is no battery inside. Nothing to charge. The card just sits in your wallet and works whenever someone taps it.
 
----
-
-## how it works
-
-**NFC chip:** NT3H2111 from NXP. stores my URL in 888 bytes of EEPROM. harvests energy from the phone's 13.56 MHz RF field and outputs it on VOUT pin (~3V at up to 5mA). when a field is detected, the FD pin goes LOW.
-
-**MCU:** ATtiny202 sitting in deep sleep at 0.1µA. the FD pin triggers a pin-change interrupt, MCU wakes in microseconds, runs the LED animation (~2 seconds), goes back to sleep.
-
-**antenna:** rectangular spiral coil, 5 turns, 0.5mm trace, 0.3mm spacing, generated directly on F.Cu via a custom KiCad footprint wizard script. tuned to 13.56 MHz with a 39pF capacitor.
-
-**LEDs:** three green 0402 LEDs (Würth 150040GS73240). green because blue/white LEDs need ~3V forward voltage which is too close to VOUT floor. green runs at 2.1V Vf, leaving clean margin. current limited to 0.3mA each via 3.3kΩ resistors — visible through transparent substrate even at low current.
-
-**total power budget when active:** ~1.9mA (MCU + 3 LEDs). comfortably within NT3H2111 VOUT 5mA limit.
+Because it's built on a transparent substrate, you can see through the card. Every trace, every component, and the antenna spiral are all visible. It looks like a piece of glass with circuits inside.
 
 ---
 
-## how to use it
+## Why I made it
 
-tap any NFC-enabled phone to the component side of the card. your phone opens the stored URL. the LEDs animate.
+I kept handing people plain paper business cards at hackathons. It felt wrong. I build hardware, but the card said nothing about that.
 
-to reprogram the URL: download NXP TagWriter app (free, iOS and Android). tap phone to card. write new NDEF record. done — no programmer needed.
-
-to reprogram the MCU: connect a CH340 USB-UART adapter to the three test pads on the bottom edge (VCC, GND, UPDI). use megaTinyCore in Arduino IDE. select ATtiny202, UPDI programmer.
+I wanted a card that proved what I do the moment someone touched it. So I built one.
 
 ---
 
-## PCB specs
+## How it works
 
-| parameter | value |
-|-----------|-------|
-| substrate | transparent FPC (PET) |
-| layers | 2 |
-| thickness | 0.2mm |
-| dimensions | 85.6 × 54mm (standard credit card) |
-| surface finish | ENIG |
-| manufacturer | JLCPCB |
+The card has two chips on it.
 
-![PCB layout screenshot](images/pcb.png)
-![schematic screenshot](images/schematic.png)
+The first is the **NT3H2111**, an NFC chip from NXP. It stores my URL in its memory and harvests power from the phone's NFC field. When a phone gets close, the chip outputs around 3V on its power pin, which powers everything else on the card.
+
+The second is the **ATtiny202**, a tiny microcontroller. It spends almost all of its time asleep, drawing basically no power. When the NFC chip detects a phone, it sends a signal to the ATtiny, which wakes up instantly, runs the LED animation for about 2 seconds, then goes back to sleep.
+
+The antenna is a copper spiral coil built directly into the circuit board. It has 5 turns and is tuned to 13.56 MHz, which is the frequency all NFC phones use.
+
+The three LEDs are green because green LEDs turn on at a lower voltage than blue or white ones, which matters a lot when you're running off harvested power.
 
 ---
 
-## bill of materials
+## How to use it
 
-see `BOM.csv` for full BOM with links and quantities.
+**Tapping it:**
+Hold the card against the back of any NFC enabled phone (most smartphones made after 2015 have NFC). The phone will show a notification to open a link. Tap it. The LEDs on the card will also light up at the same time.
 
-| component | part | qty |
-|-----------|------|-----|
-| NFC chip | NT3H2111W0FTT (TSSOP8) | 1 |
-| MCU | ATtiny202-SSF (SOIC8) | 1 |
-| green LED 0402 | Würth 150040GS73240 | 3 |
-| 220nF 0402 cap | generic | 1 |
-| 100nF 0402 cap | generic | 1 |
-| 39pF 0402 cap | generic | 1 |
-| 10pF 0402 cap (DNP) | generic | 1 |
-| 10kΩ 0402 resistor | generic | 4 |
-| 3.3kΩ 0402 resistor | generic | 3 |
-| 1kΩ 0402 resistor | generic | 1 |
-| transparent FPC PCB | JLCPCB | 1 |
+If nothing happens, try moving the card around slowly. The NFC antenna in phones is usually near the top or center of the back.
 
-**total BOM cost: ~$32 for 5 boards including shipping**
+**Changing the URL:**
+1. Download the NXP TagWriter app (free on both iOS and Android)
+2. Open the app and select "Write"
+3. Choose "Link" and type in the URL you want
+4. Hold your phone to the card
+5. Done. The old URL is replaced with the new one
 
----
+No programmer needed for this. The NFC chip handles it wirelessly.
 
-## firmware
-
-`firmware/glassboard.ino` — ATtiny202 sketch using megaTinyCore
-
-install megaTinyCore via Arduino IDE board manager. select ATtiny202, 5MHz internal clock, UPDI programmer.
+**Reprogramming the LED animation:**
+1. Get a CH340 USB to UART adapter (about $3 on Amazon)
+2. Connect it to the three small pads on the bottom edge of the card: VCC, GND, and UPDI
+3. Install megaTinyCore in Arduino IDE (add this URL to board manager: `http://drazzy.com/package_drazzy.com_index.json`)
+4. Select board: ATtiny202, clock: 5MHz internal, programmer: UPDI
+5. Open `firmware/glassboard.ino` and upload
 
 ---
 
-## files
+## PCB
+
+![PCB Layout](images/pcb.png)
+![Schematic](images/schematic.png)
+
+| Spec | Value |
+|------|-------|
+| Substrate | Transparent FPC (PET) |
+| Layers | 2 |
+| Thickness | 0.2mm |
+| Dimensions | 85.6 x 54mm (credit card size) |
+| Surface finish | ENIG (gold) |
+| Made by | JLCPCB |
+
+---
+
+## Parts list
+
+Full BOM with purchase links is in `BOM.csv`.
+
+| Part | Description | Quantity |
+|------|-------------|----------|
+| NT3H2111W0FTT | NFC chip, TSSOP8 | 1 |
+| ATtiny202-SSF | Microcontroller, SOIC8 | 1 |
+| Wurth 150040GS73240 | Green LED, 0402 | 3 |
+| 220nF cap | Decoupling, 0402 | 1 |
+| 100nF cap | RESET filter, 0402 | 1 |
+| 39pF cap | Antenna tuning, 0402 | 1 |
+| 10pF cap | Optional tuning, 0402 (DNP) | 1 |
+| 10k resistor | Pull-ups, 0402 | 4 |
+| 3.3k resistor | LED current limit, 0402 | 3 |
+| 1k resistor | UPDI protection, 0402 | 1 |
+| Transparent FPC PCB | From JLCPCB | 1 |
+
+Total cost is around $32 for 5 boards including shipping.
+
+---
+
+## Firmware
+
+The firmware file is at `firmware/glassboard.ino`.
+
+It puts the ATtiny202 into deep sleep mode. When the NT3H2111 detects a phone, its FD pin goes LOW, which triggers a hardware interrupt on the ATtiny. The MCU wakes up, runs a chase animation across the three LEDs, then goes back to sleep. The whole active cycle takes about 2 seconds.
+
+---
+
+## Files
 
 ```
 glassboard/
@@ -109,20 +124,20 @@ glassboard/
 │   ├── glassboard.kicad_pcb
 │   └── gerbers/
 ├── Glassboard_Zine.pdf
-├── images/
-│   ├── 3d_back.png
-│   ├── 3d_front.png
-│   ├── pcb.png
-│   ├── schematic.png
-│   └── zine.png
+└── images/
+    ├── 3d_front.png
+    ├── 3d_back.png
+    ├── pcb.png
+    ├── schematic.png
+    └── zine.png
 ```
 
 ---
 
-## zine page
+## Zine page
 
-![zine page](images/zine.png)
+![Zine](images/zine.png)
 
 ---
 
-made by Yakshith Kommineni, 17, Brampton Ontario Canada
+Made by Yakshith Kommineni, age 17, Brampton Ontario Canada
