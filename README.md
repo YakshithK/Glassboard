@@ -2,7 +2,8 @@
 
 a transparent NFC business card that lights up when you tap your phone to it. no battery. no charging. ever.
 
-![3D render of Glassboard](images/3d-render.png)
+![3D render of Glassboard (Front)](images/3d-front.png)
+![3D render of Glassboard (Back)](images/3d-back.png)
 
 ---
 
@@ -59,7 +60,7 @@ to reprogram the MCU: connect a CH340 USB-UART adapter to the three test pads on
 | surface finish | ENIG |
 | manufacturer | JLCPCB |
 
-![PCB layout screenshot](images/pcb-layout.png)
+![PCB layout screenshot](images/pcb.png)
 ![schematic screenshot](images/schematic.png)
 
 ---
@@ -107,16 +108,20 @@ glassboard/
 │   ├── glassboard.kicad_sch
 │   ├── glassboard.kicad_pcb
 │   └── gerbers/
-├── zine/
-│   └── zine-page.pdf
-└── images/
+├── Glassboard_Zine.pdf
+├── images/
+│   ├── 3d_back.png
+│   ├── 3d_front.png
+│   ├── pcb.png
+│   ├── schematic.png
+│   └── zine.png
 ```
 
 ---
 
 ## zine page
 
-![zine page](zine/zine-page.pdf)
+![zine page](images/zine.png)
 
 ---
 
