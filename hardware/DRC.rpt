@@ -1,0 +1,71 @@
+** Drc report for Glassboard.kicad_pcb **
+** Created on 2026-05-09T12:30:59-0400 **
+
+** Found 11 DRC violations **
+[shorting_items]: Items shorting two nets (nets Net-(U1-LB) and Net-(U1-LA))
+    Local override; error
+    @(3.7000 mm, 2.0000 mm): Pad 2 [Net-(U1-LB)] of L_ANTENNA_COIL1 on F.Cu
+    @(5.8500 mm, 2.0000 mm): Track [Net-(U1-LA)] on F.Cu, length 1.6990 mm
+[shorting_items]: Items shorting two nets (nets Net-(U1-LA) and Net-(U1-LB))
+    Local override; error
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+    @(9.4510 mm, 44.6490 mm): Track [Net-(U1-LB)] on F.Cu, length 0.2282 mm
+[shorting_items]: Items shorting two nets (nets Net-(U1-LB) and Net-(U1-LA))
+    Local override; error
+    @(21.9990 mm, 44.6490 mm): Track [Net-(U1-LB)] on F.Cu, length 12.5480 mm
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+[shorting_items]: Items shorting two nets (nets Net-(U1-LB) and )
+    Local override; error
+    @(3.7000 mm, 2.0000 mm): Pad 2 [Net-(U1-LB)] of L_ANTENNA_COIL1 on F.Cu
+    @(3.7000 mm, 4.0000 mm): Segment [<no net>] of L_ANTENNA_COIL1 on F.Cu
+[shorting_items]: Items shorting two nets (nets  and Net-(U1-LA))
+    Local override; error
+    @(6.9000 mm, 47.2000 mm): Segment [<no net>] of L_ANTENNA_COIL1 on F.Cu
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(5.8500 mm, 2.0000 mm): Track [Net-(U1-LA)] on F.Cu, length 1.6990 mm
+    @(3.7000 mm, 2.0000 mm): Pad 2 [Net-(U1-LB)] of L_ANTENNA_COIL1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(9.4510 mm, 44.6490 mm): Track [Net-(U1-LB)] on F.Cu, length 0.2282 mm
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(21.9990 mm, 44.6490 mm): Track [Net-(U1-LB)] on F.Cu, length 12.5480 mm
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(3.7000 mm, 4.0000 mm): Segment [<no net>] of L_ANTENNA_COIL1 on F.Cu
+    @(3.7000 mm, 2.0000 mm): Pad 2 [Net-(U1-LB)] of L_ANTENNA_COIL1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(6.9000 mm, 47.2000 mm): Segment [<no net>] of L_ANTENNA_COIL1 on F.Cu
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(56.0172 mm, 27.1740 mm): Footprint text of U1 (*)
+    @(56.0172 mm, 27.1740 mm): Footprint text of U1 (*)
+
+** Found 2 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+    @(10.7500 mm, 8.5000 mm): Track [Net-(U1-LA)] on F.Cu, length 0.0707 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(9.4510 mm, 44.6490 mm): Track [Net-(U1-LB)] on F.Cu, length 0.2282 mm
+    @(3.7000 mm, 2.0000 mm): Pad 2 [Net-(U1-LB)] of L_ANTENNA_COIL1 on F.Cu
+
+** Found 3 Footprint errors **
+[net_conflict]: Pad net (Net-(U1-LA)) doesn't match net given by schematic (Net-(U1-LB)).
+    Local override; warning
+    @(8.9000 mm, 45.2000 mm): Pad 1 [Net-(U1-LA)] of L_ANTENNA_COIL1 on F.Cu
+[net_conflict]: Pad net (Net-(U1-LB)) doesn't match net given by schematic (Net-(U1-LA)).
+    Local override; warning
+    @(3.7000 mm, 2.0000 mm): Pad 2 [Net-(U1-LB)] of L_ANTENNA_COIL1 on F.Cu
+[footprint_symbol_mismatch]: Value (U1) doesn't match symbol value (TSSOP_1W0FTTJ_NXP).
+    Local override; warning
+    @(58.5000 mm, 29.8000 mm): Footprint U1
+
+** End of Report **
