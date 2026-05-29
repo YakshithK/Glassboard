@@ -9,3 +9,4 @@ R1-R4,FD/SCL/SDA/RESET Pull-up,10kΩ,0402,4,Stackpole Electronics Inc,RMCF0402FT
 R5,UPDI Series Resistor,1kΩ,0402,1,Stackpole Electronics Inc,RMCF0402FT1K00,https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0402FT1K00/1761754,0.10,
 R6-R8,LED1-LED3 Current Limit,3.3kΩ,0402,3,Stackpole Electronics Inc,RMCF0402FT3K30,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0402FT3K30/2417445,0.10,
 PCB,Transparent FPC PCB,Glassboard,85.6x54mm,5,JLCPCB,,https://jlcpcb.com,6.40,ENIG finish / 0.2mm / 2 layer / transparent FPC - price per board for qty 5
+TOTAL,,,,,,,,$34.87,
